@@ -19,20 +19,24 @@
         <div>
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome">
+            value="<php echo $row 'nome_usuario' ?>">
         </div>
         <div>
             <label for="email">E-mail</label>
             <input type="email" name="email" id="email">
+            value="<php echo $row 'email_usuario' ?>">
         </div>
         <div>
             <label for="fone">Telefone</label>
             <input type="tel" name="fone" id="fone" 
             placeholder="Formato (18) 9999-8888"
             pattern="\([0-9]{2}\)([9]{1})?[0-9]{4-5}-[0-9]{4}">
+            value="<php echo $row 'fone_usuario' ?>">
         </div>
         <div>
             <label for="senha">Senha</label>
             <input type="password" name="senha" id="senha">
+            value="<php echo $row 'senha' ?>">
         </div>
         <div>
             <input type="submit" value="Salvar">
