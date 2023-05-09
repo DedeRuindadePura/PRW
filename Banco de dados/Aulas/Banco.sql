@@ -23,3 +23,7 @@ VALUES ('CÁSSIO', '(18) 3622-9046', 'cassio#mail.com', '1234');
 
 select * from usuario;
 **/
+
+UPDATE	usuario SET nome_usuario = "dedeco",
+					email_usuario = "dedeco@gmail.com"
+WHERE id_usuario = 1
