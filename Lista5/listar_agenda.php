@@ -46,10 +46,10 @@
      echo "<td>".$row['celular']."</td>";
      echo "<td>".$row['email']."</td>";
      echo "<td>".$row['dt cadastro']."</td>";
-     echo "<td><a href='altera_usuario.php?id_usuario="
-                .$row['id_usuario']."'>Alterar</a> </td>";
-     echo "<td><a href='deletar_usuario.php?id_usuario="
-                .$row['id_usuario']."'>Deletar</a> </td>";
+     echo "<td><a href='altera_agenda.php?id_agenda="
+                .$row['id_agenda']."'>Alterar</a> </td>";
+     echo "<td><a href='deletar_agenda.php?id_agenda="
+                .$row['id_agenda']."'>Deletar</a> </td>";
                 
      echo "</tr>";
      }while($row = mysqli_fetch_array($result))
