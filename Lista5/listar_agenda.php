@@ -43,7 +43,6 @@
               echo "<td></td>";
           else
               echo "<td><img src='".$row['foto']."'width='80' height='100'/></td>";
-     echo "<td>".$row['id_agenda']."</td>";
      echo "<td>".$row['nome']."</td>";
      echo "<td>".$row['apelido']."</td>";
      echo "<td>".$row['endereco']."</td>";
