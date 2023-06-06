@@ -1,13 +1,5 @@
 <?php
     include("conexao.php");
-    // Upload foto
-    if(file_exists($_FILES['foto']['tmp_name'])){
-    $pasta_destino = 'fotos/';
-    $extensao = strtolower(substr($_FILES['foto']['name'],-4));
-    $nome_foto = $pasta_destino . date("Ymd-His") . $extensao;
-    move_uploaded_file($_FILES['foto']['tmp_name'], $nome_foto);
-    }
-    // fim upload
 
     $nome = $_POST['nome'];
     $apelido = $_POST['apelido'];
@@ -34,11 +26,12 @@
    
 
 
-    $sql = "INSERT INTO agenda (nome_agenda, apelido, endereco, bairro, cidade, estado, telefone, celular, email, dt_cadastro)";
+    $sql = "INSERT INTO agenda (nome, apelido, endereco, bairro, cidade, estado, telefone, celular, email, dt_cadastro)";
+    
 
-    $sql .= " VALUES ('".$nome."','".$apelido."','".$endereco."','".$bairro."','".$cidade."','".$estado."','".$telefone."','".$celular."','".$email."')";
+    $sql .= " VALUES ('".$nome."','".$apelido."','".$endereco."','".$bairro."','".$cidade."','".$estado."','".$telefone."','".$celular."','".$email."','".$dt_cadastro."')";
 
-    echo $sql."<br>";
+    //echo $sql."<br>";
     $result = mysqli_query($con, $sql);
 
     if ($result)
