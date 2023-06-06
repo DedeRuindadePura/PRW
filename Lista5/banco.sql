@@ -14,5 +14,10 @@ telefone varchar(15) not null,
 celular varchar(15) not null,
 email varchar(70) not null,
 dt_cadastro date not null,
+foto varchar(100) not null,
 PRIMARY KEY (id_agenda)
 );
+
+UPDATE	agenda SET nome = "dedeco",
+					email = "dedeco@gmail.com"
+WHERE id_agenda = 1
