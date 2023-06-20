@@ -10,7 +10,7 @@
   <h1>Bem-vindo(a) ao Projeto de Fluxo de Caixa</h1>
   <ul>
     <li><a href="cadastro_fluxo_caixa.html">Cadastro Fluxo de Caixa</a></li>
-    <li><a href="listagem_fluxo_caixa.html">Listagem de Fluxo de Caixa</a></li>
+    <li><a href="listagem_fluxo_caixa.php">Listagem de Fluxo de Caixa</a></li>
     <li><a href="consulta_saldo_caixa.html">Consulta Saldo do Caixa</a></li>
   </ul>
 </body>
