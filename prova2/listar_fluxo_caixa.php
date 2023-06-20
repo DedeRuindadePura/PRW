@@ -15,28 +15,33 @@
     // retorna apenas uma linha dos registros retornados
     $row = mysqli_fetch_array($result);
     ?>
-    <h1>Listagem de fluxo do caixa</h1>
+    <h1>Consulta de fluxo de caixas</h1>
     <table align="center" border="1" width="500">
         <tr>
-            <th>Codigo</th>
             <th>Data</th>
             <th>Tipo</th>
+            <th>Valor</th>
             <th>Historico</th>
+            <th>Cheque</th>
         </tr>
     
     <?php
-     do{
-     echo "<tr>";
-     echo "<td>".$row['id']."</td>";
+    do{
+      if($row)
+      {
+          echo "<tr>";
+          echo "<td>".$row['id']."</td>";
+    
      echo "<td>".$row['data']."</td>";
      echo "<td>".$row['tipo']."</td>";
+     echo "<td>".$row['valor']."</td>";
      echo "<td>".$row['historico']."</td>";
+     echo "<td>".$row['cheque']."</td>";
      echo "<td><a href='altera_fluxo_caixa.php?id="
                 .$row['id']."'>Alterar</a> </td>";
      echo "<td><a href='excluir_fluxo_caixa.php?id="
                 .$row['id']."'>Deletar</a> </td>";
-                
-     echo "</tr>";
+     echo "</tr>";}
      }while($row = mysqli_fetch_array($result))
     ?>
     <a href="index.php">Voltar</a>

@@ -26,9 +26,9 @@
         </div>
         <div>
         <p>Tipo:</p>
-            <input type="radio" name="tipo" value="Entrada">
+            <input type="radio" name="tipo" value="Entrada" required>
             <label for="Entrada">Entrada</label>
-            <input type="radio" name="tipo" value="Saida">
+            <input type="radio" name="tipo" value="Saida" required>
             <label for="Saida">Saida</label
             value="<?php echo $row['tipo'] ?>">
             

@@ -3,7 +3,7 @@
     include("conexao.php");
 
     
-    $data = date("Y/m/d");
+    $data = $_POST['data'];
     $tipo = $_POST['tipo'];
     $valor = $_POST['valor'];
     $historico = $_POST['historico'];
