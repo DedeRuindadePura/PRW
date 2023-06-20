@@ -31,9 +31,9 @@
      echo "<td>".$row['data']."</td>";
      echo "<td>".$row['tipo']."</td>";
      echo "<td>".$row['historico']."</td>";
-     echo "<td><a href='altera_usuario.php?id_usuario="
+     echo "<td><a href='altera_fluxo_caixa.php?id="
                 .$row['id']."'>Alterar</a> </td>";
-     echo "<td><a href='deletar_usuario.php?id_usuario="
+     echo "<td><a href='excluir_fluxo_caixa.php?ido="
                 .$row['id']."'>Deletar</a> </td>";
                 
      echo "</tr>";

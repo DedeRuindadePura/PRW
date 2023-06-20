@@ -1,7 +1,7 @@
 <?php
     include('conexao.php');
-    $id_usuario = $_GET['id_usuario'];
-    $sql = "SELECT * FROM usuario where id_usuario=$id_usuario";
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM fluxo_caixa where id=$id";
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_array($result)
 ?>
@@ -13,37 +13,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <!--http://localhost/PRW/Banco%20de%20dados/Aulas/altera_usuario?id_usuario=1 -->
-    <h1>Cadastro de Usuarios - IFSP</h1>
-    <form action="altera_usuario_exe.php" method="POST" >
-        <input name="id_usuario" type="hidden"
-            value="<?php echo $row['id_usuario'] ?>"> 
-    <div>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome"
-            value="<?php echo $row['nome_usuario'] ?>">
+<h1>Alterar Fluxo de Caixa</h1>
+    <form action="altera_fluxo_caixa.php" method="POST" enctype="multipart/form-data"> 
+
+        <div>
+            <label>Data</label>
+            <input type="date" name="data">
         </div>
         <div>
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email"
-            value="<?php echo $row['email_usuario'] ?>">
-            
+            <p>Tipo:</p>
+            <input type="radio" name="tipo" value="Entrada">
+            <label for="Entrada">Entrada</label><br>
+            <input type="radio" name="tipo" value="Saida">
+            <label for="Saida">Saida</label>
         </div>
         <div>
-            <label for="fone">Telefone</label>
-            <input type="tel" name="fone" id="fone" 
-            placeholder="Formato (18) 9999-8888"
-            pattern="\([0-9]{2}\)([9]{1})?[0-9]{4-5}-[0-9]{4}"
-            value="<?php echo $row['fone_usuario'] ?>">
+            <label for="valor">Valor:</label>
+	<input type='number' id='valor' name='valor' required>
         </div>
         <div>
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha"
-            value="<?php echo $row['senha'] ?>">
+            <label for="historico">Historico:</label>
+	<input type='text' id='historico' name='historico' required>
         </div>
         <div>
-            <input type="submit" value="Salvar">
+            <label for="cheque">Cheque:</label>
+	<select id="cheque" name="cheque">
+		<option value="sim">Sim</option>
+		<option value="nao">Não</option>
+	</select>
+        </div>
+        <div>        
+            <input type="submit" value="Enviar">
         </div>
     </form>
 </body>
