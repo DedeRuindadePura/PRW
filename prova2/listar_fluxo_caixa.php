@@ -9,7 +9,7 @@
 <body>
     <?php
     include('conexao.php');
-    $sql = "SELECT * FROM id";
+    $sql = "SELECT * FROM fluxo_caixa";
     // mysqli_query => executa um comando no banco de dados
     $result = mysqli_query($con,$sql);
     // retorna apenas uma linha dos registros retornados
@@ -32,9 +32,9 @@
      echo "<td>".$row['tipo']."</td>";
      echo "<td>".$row['historico']."</td>";
      echo "<td><a href='altera_usuario.php?id_usuario="
-                .$row['id_usuario']."'>Alterar</a> </td>";
+                .$row['id']."'>Alterar</a> </td>";
      echo "<td><a href='deletar_usuario.php?id_usuario="
-                .$row['id_usuario']."'>Deletar</a> </td>";
+                .$row['id']."'>Deletar</a> </td>";
                 
      echo "</tr>";
      }while($row = mysqli_fetch_array($result))
