@@ -1,6 +1,6 @@
 <?php
     include('conexao.php');
-    $id_agenda = $_GET['id_agenda'];
+    $id_agenda = $_GET['id'];
     $sql = "DELETE FROM agenda where id_agenda=$id_agenda";
     $result = mysqli_query($con,$sql);
     if($result)

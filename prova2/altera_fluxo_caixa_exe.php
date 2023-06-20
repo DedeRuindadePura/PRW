@@ -1,33 +1,23 @@
-<?php  
+<?php
+
     include('conexao.php');
+    $data = str_replace("/", "-", $_POST["data"]);
+    $data = date('Y-m-d', strtotime($data));
 
-
-    $data = date("Y/m/d");
+    $id = $_POST['id'];
     $tipo = $_POST['tipo'];
     $valor = $_POST['valor'];
     $historico = $_POST['historico'];
     $cheque = $_POST['cheque'];
 
-    echo "<h1>Dados do usuário</h1>";
-    echo "Data: $data <br>";
-    echo "Tipo: $tipo <br>";
-    echo "Valor: $valor <br>";
-    echo "Historico: $historico <br>";
-    echo "Cheque: $cheque <br>";
-    
+    $sql = "update fluxo_caixa set data = '$data', tipo = '$tipo', valor = '$valor', 
+                                            historico = '$historico', cheque = '$cheque'
+                                            where id = ".$id;
+    $res = mysqli_query($con, $sql);
 
-   // $sql = "INSERT INTO fluxo_caixa (data, tipo, valor, historico, cheque)";
-    
-
-    $sql .= " VALUES ('".$data."','".$tipo."','".$valor."',
-                         '".$historico."','".$cheque."')";
-
-    echo $sql."<br>";
-    $result = mysqli_query($con, $sql);
-
-    if ($result)
-        echo "Dados alternados com sucesso!";
-    else
-        echo "Erro ao alternar cadastrar!";
-        
+    if(mysqli_affected_rows($con) == 1){
+        header("Location:listar_fluxo_caixa.php");
+    } else{
+        echo "Falha Alteração<br>";
+    }
 ?>
